@@ -1,0 +1,22 @@
+@use './mixins' as m;
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.bg-img {
+
+    background-position: center;
+    @include m.desktop {
+        background-size: cover;
+    };
+}
