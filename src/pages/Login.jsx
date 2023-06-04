@@ -58,12 +58,14 @@ export function Login() {
               <img src={user} alt='gmail' />
             </label>
             <input
-              type="text"
+              type="email"
               id='email'
               placeholder='Email'
               name='email'
               onChange={handleChange}
               value={email}
+              minLength='10'
+              required
             />
           </div>
 
@@ -72,12 +74,14 @@ export function Login() {
               <img src={pass} alt='password' />
             </label>
             <input
-              type="text"
+              type="password"
               id='password'
               placeholder='Contraseña'
               name='password'
               value={password}
               onChange={handleChange}
+              minLength='7'
+              required
             />
           </div>
 
