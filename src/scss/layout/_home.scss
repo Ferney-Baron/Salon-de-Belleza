@@ -1,0 +1,64 @@
+@use './../base/var' as v;
+@use './../base/mixins' as m;
+
+
+.descripcion {
+    background-color: v.$white;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    @include m.desktopmd {
+        .descripcion-container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center;
+
+            .descripcion-texto, .descripcion-img {
+                flex: 1;
+            }
+        }
+    }
+    
+
+    .descripcion-texto {
+        
+        h3,
+        h4 {
+            font-weight: 600;
+            padding-top: .3rem;
+            text-align: center;
+
+            @include m.desktopmd {
+                text-align: start;
+            }
+        }
+
+        h3 {
+            font-size: 1.9rem;
+            letter-spacing: .1rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            text-align: justify;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            padding: 0 1rem 0 1rem;
+        }
+    }
+
+    .descripcion-img {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 70%;
+        }
+
+    }
+}

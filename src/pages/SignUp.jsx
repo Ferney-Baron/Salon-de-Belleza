@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { user, pass, tel, mail, bgimage } from '../helpers/imgs.jsx'
 import { ScaleLoader } from 'react-spinners';
-// import bcrypt from 'bcrypt'
+import bcryptjs from 'bcryptjs'
 
 export function SignUp() {
 
@@ -29,17 +29,19 @@ export function SignUp() {
   const register = async (e) => {
     e.preventDefault();
 
-    // bcrypt.genSalt(10, function (err, salt) {
-    //   bcrypt.hash(password, salt, function (err, hash) {
-    //     console.log(hash);
-    //   });
-    // });
+    const salt = bcryptjs.genSaltSync(10);
+    const hash = bcryptjs.hashSync( password, salt);
+    // userData.password = hash;
 
     let data = new FormData();
 
     Object.keys(userData).forEach(key => {
-      data.append(key, userData[key]);
-    })
+      if(key === 'password') {
+        data.append(key, hash);
+      } else {
+        data.append(key, userData[key]);
+      }
+    });
 
     try {
       setIsLoading(!isLoading);

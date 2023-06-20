@@ -1,0 +1,51 @@
+@use '../base/var' as v;
+@use '../base/mixins' as m;
+
+.header {
+
+    .header-img-container {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: v.$secondTitleFont;
+            color: v.$white;
+            font-size: 4rem;
+            font-weight: 800;
+
+            @include m.desktopmd {
+                font-size: 8rem;
+            }
+        }
+    }
+
+    .header-info {
+        background-color: v.$lightBrown;
+    }
+
+    .header-nav {
+        background-color: v.$white;
+
+        .nav-title {
+            font-size: 3rem;
+        }
+
+        a {
+            color: v.$black;
+            font-size: 1.7rem;
+        }
+
+        
+    }
+
+
+}

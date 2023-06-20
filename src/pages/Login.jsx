@@ -1,5 +1,6 @@
 import { user, pass, bgimage } from '../helpers/imgs.jsx'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 export function Login() {
 
@@ -17,6 +18,7 @@ export function Login() {
   };
 
   const { email, password } = userData;
+  const navegate = useNavigate();
 
   const validUser = async (e) => {
     e.preventDefault();
@@ -34,9 +36,12 @@ export function Login() {
       });
 
       const res = await req.json();
+
       console.log(res);
-
-
+      
+      if (res.usuario && res.password) { 
+        navegate('/');
+      }
     } catch (error) {
       console.log(error);
     }

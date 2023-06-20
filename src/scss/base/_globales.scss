@@ -1,10 +1,12 @@
 @use './mixins' as m;
+@use './var' as v;
 
 
 html {
     font-size: 62.5%;
     box-sizing: border-box;
     height: 100%;
+    overflow: auto;
 }
 
 *,
@@ -13,10 +15,18 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    font-family: v.$regularFont;
+}
+
 .bg-img {
 
     background-position: center;
     @include m.desktop {
         background-size: cover;
     };
+}
+
+h1, h1, h3, h4, p {
+    margin: 0;
 }
