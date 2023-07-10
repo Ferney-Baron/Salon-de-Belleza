@@ -14,15 +14,16 @@
             justify-content: center;
             align-items: center;
 
-            .descripcion-texto, .descripcion-img {
+            .descripcion-texto,
+            .descripcion-img {
                 flex: 1;
             }
         }
     }
-    
+
 
     .descripcion-texto {
-        
+
         h3,
         h4 {
             font-weight: 600;
@@ -41,6 +42,7 @@
 
         h4 {
             font-size: 1.1rem;
+            opacity: .8;
         }
 
         p {
@@ -61,4 +63,53 @@
         }
 
     }
+}
+
+.especialistas {
+    @include m.center;
+    flex-direction: column;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    .especialistas-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+
+    .especialistas-subt {
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+    .especialistas-summary {
+        font-size: 1.4rem;
+        width: 85%;
+        text-align: justify;
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            text-align: center;
+            width: 70%;
+        }
+
+    }
+
+    @include m.tablet {
+        .especialistas-box {
+            @include m.center;
+        }
+    }
+
+
+
+
+
+
+
+
+
 }

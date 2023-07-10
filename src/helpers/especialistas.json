@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "nombre": "Lina",
+        "apellido": "Lopez",
+        "especialidad": "Dermatologa",
+        "foto": "https://paoladerma.com/wp-content/uploads/2023/03/Dra-Paola-Tejeda-Dermatologa-Cali-Palmira-Optmizada2-768x930.webp"
+    },
+    {
+        "id": "2",
+        "nombre": "Maria",
+        "apellido": "Baron",
+        "especialidad": "Peluquera",
+        "foto": "https://images.hola.com/imagenes/belleza/actualidad/20210406187131/peinados-actrices-maria-roberts-extensiones/0-936-886/studiohiba1z-z.jpg?tx=w_360"
+    },
+    {
+        "id": "3",
+        "nombre": "Jin",
+        "apellido": "Park",
+        "especialidad": "Masajista",
+        "foto": "https://thumbs.dreamstime.com/b/retrato-de-un-masajista-de-sexo-femenino-confiado-45089582.jpg"
+    },
+    {
+        "id": "4",
+        "nombre": "Natalia",
+        "apellido": "Park",
+        "especialidad": "Maquilladora",
+        "foto": "https://ojo.pe/resizer/Gx3NI_mgl5vkfJfUhewbdKr2KQs=/620x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/MIBQ6MHP5RFNHOMXJSRFTHM55Q.jpg"
+    }
+]

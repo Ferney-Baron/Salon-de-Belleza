@@ -1,0 +1,40 @@
+@use '../base/var' as v;
+@use '../base/mixins' as m;
+
+.especialistas-card {
+    margin: 1rem;
+    position: relative;
+    @include m.center;
+    overflow: hidden;
+    
+    img {
+        width: 30rem;
+        height: 35rem;
+        object-fit: cover;
+    }
+
+    .hover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        @include m.center;
+        flex-direction: column;
+        opacity: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+        .hover {
+            opacity: 1;
+            h3, p {
+                color: antiquewhite;
+                font-weight: 600;
+                letter-spacing: .4rem;
+            }
+            background-color: rgba(#000, .5);
+            transition: background .4s;
+        }
+    }
+
+
+}

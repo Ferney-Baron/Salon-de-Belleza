@@ -1,7 +1,31 @@
+import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
+import { Specialists } from "./components/Specialist"
 import { descripcionImg } from "./helpers/imgs"
+import especialistasJson from "./helpers/especialistas"
 
 export function BeautySalonApp() {
+
+  const [especialistas, setEspecialistas] = useState([]);
+
+
+  useEffect(() => {
+
+    const traerEspecialistas = async () => {
+      try {
+        const url = await fetch('http://localhost:4000/api/especialista');
+        const res = await url.json();
+        setEspecialistas(res);
+
+      } catch (error) {
+        setEspecialistas(especialistasJson);
+      }
+    };
+
+    traerEspecialistas();
+  }, [])
+
+
   return (
     <>
       <Header />
@@ -25,6 +49,21 @@ export function BeautySalonApp() {
           </div>
 
         </div>
+      </section>
+
+      <section className="especialistas" style={{ backgroundColor: '#F3F0EB' }}>
+
+        <h3 className="especialistas-subt">Our Experience Specialists</h3>
+        <p className="especialistas-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis sunt, reprehenderit ea harum delectus quo id qui minus accusamus assumenda natus officia similique vero deserunt excepturi neque quasi facere ipsum.</p>
+
+        <div className="especialistas-box">
+          {
+            especialistas.map(({ nombre, especialidad, id, foto }) => (
+              <Specialists name={nombre} specialists={especialidad} key={id} img={foto} />
+            ))
+          }
+        </div>
+
       </section>
 
     </>

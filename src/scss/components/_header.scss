@@ -3,6 +3,8 @@
 
 .header {
 
+    
+
     .header-img-container {
         position: relative;
 
@@ -42,6 +44,7 @@
         a {
             color: v.$black;
             font-size: 1.7rem;
+            font-family: v.$secondTitleFont;
         }
 
         
